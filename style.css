@@ -204,10 +204,10 @@ footer {
 }
 
 .hero .social-links {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 20px;
+  display: flex; /* display: flex; に変更 */
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero .social-icons {
