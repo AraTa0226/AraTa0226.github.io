@@ -72,7 +72,7 @@ gsap.from(".social-icon", {
     duration: 0.8,
     delay: 1, // ヒーローコンテンツのアニメーション後に開始
     scrollTrigger: {
-        trigger: ".social-links",
+        trigger: ".hero .social-links",
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse"
