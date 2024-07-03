@@ -1,3 +1,14 @@
+//デバッグ
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
+    const socialIcons = document.querySelectorAll('.social-icon');
+    console.log("Number of social icons:", socialIcons.length);
+    socialIcons.forEach((icon, index) => {
+        console.log(`Icon ${index + 1} visibility:`, window.getComputedStyle(icon).visibility);
+        console.log(`Icon ${index + 1} opacity:`, window.getComputedStyle(icon).opacity);
+    });
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 // 浮遊するキャンディのアニメーション
