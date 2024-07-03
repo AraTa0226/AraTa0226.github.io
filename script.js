@@ -1,4 +1,5 @@
-//デバッグ
+document.addEventListener('DOMContentLoaded', function() {
+    //デバッグ
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM fully loaded");
     const socialIcons = document.querySelectorAll('.social-icon');
@@ -122,4 +123,16 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.remove('visible');
     }
+});
+    gsap.from(".social-icon", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.2,
+        duration: 0.8,
+        delay: 1,
+        ease: "power2.out",
+        onStart: function() {
+            gsap.set(".social-icon", {visibility: "visible"});
+        }
+    });
 });
