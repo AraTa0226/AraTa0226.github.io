@@ -54,28 +54,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         const headerOffset = 60; // ヘッダーの高さ
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
+        if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
     });
 });
 
 // SNSアイコンのアニメーション
 gsap.from(".social-icon", {
     opacity: 0,
-    x: -30,
+    y: 20, // x方向ではなくy方向に移動
     stagger: 0.2,
     duration: 0.8,
-    delay: 1, // ヒーローコンテンツのアニメーション後に開始
-    scrollTrigger: {
-        trigger: ".hero .social-links",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
+    delay: 1,
+    ease: "power2.out",
+    onStart: function() {
+        gsap.set(".social-icon", {visibility: "visible"}); // アニメーション開始時に可視性を設定
     }
 });
 
@@ -85,7 +86,7 @@ let lastScrollTop = 0;
 const headerHeight = header.offsetHeight;
 
 window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
         // スクロールダウン
