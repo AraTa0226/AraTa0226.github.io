@@ -118,12 +118,9 @@ window.addEventListener('load', function() {
       gsap.from(icon, {
         opacity: 0,
         y: 20,
-        duration: 0.8,
-        delay: 1 + (index * 0.2),
+        duration: 0.5,
+        delay: 0.5 + (index * 0.1),
         ease: "power2.out",
-        onStart: function() {
-          icon.style.visibility = 'visible';
-        }
       });
     });
   });
