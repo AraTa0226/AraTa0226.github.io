@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap');
-
 :root {
     --primary-color: #FF6B6B;
     --secondary-color: #4ECDC4;
@@ -216,9 +215,9 @@ footer {
 }
 
 .hero .social-icon {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 15px 30px;
   border-radius: 50px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -226,13 +225,13 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
 }
 
 .hero .social-icon:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-3px) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero .social-icon img {
@@ -243,5 +242,4 @@ footer {
 
 .hero .social-icon span {
   font-size: 16px;
-  font-weight: bold;
 }
