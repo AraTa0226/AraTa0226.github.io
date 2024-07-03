@@ -112,9 +112,21 @@ window.addEventListener('scroll', () => {
 }, false);
 
 // ページ読み込み時にヘッダーを非表示に
-window.addEventListener('load', () => {
-    header.classList.remove('visible');
-});
+window.addEventListener('load', function() {
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+      gsap.from(icon, {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 1 + (index * 0.2),
+        ease: "power2.out",
+        onStart: function() {
+          icon.style.visibility = 'visible';
+        }
+      });
+    });
+  });
 
 // スクロールしたらヘッダーを表示
 window.addEventListener('scroll', () => {
