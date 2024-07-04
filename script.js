@@ -71,16 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // SNSアイコンのアニメーション
-    gsap.from(".social-icon", {
-        opacity: 0,
-        y: 20,
-        stagger: 0.2,
-        duration: 0.8,
-        delay: 1,
-        ease: "power2.out",
-        onStart: function() {
-            gsap.set(".social-icon", {visibility: "visible", opacity: 1});
-        }
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+        gsap.from(icon, {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            delay: 1 + (index * 0.2),
+            ease: "power2.out",
+            onStart: function() {
+                gsap.set(icon, {visibility: "visible"});
+            }
+        });
     });
 
     // ヘッダーのスクロールトリガー
@@ -88,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     const headerHeight = header.offsetHeight;
 
-    window.addEventListener('scroll', () => {
+    function handleScroll() {
         let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
@@ -100,28 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // モバイルやネガティブスクロールの対応
-    }, false);
 
-    // ページ読み込み時にヘッダーを非表示に
-    window.addEventListener('load', function() {
-        const socialIcons = document.querySelectorAll('.social-icon');
-        socialIcons.forEach((icon, index) => {
-            gsap.from(icon, {
-                opacity: 0,
-                y: 20,
-                duration: 0.5,
-                delay: 0.5 + (index * 0.1),
-                ease: "power2.out",
-            });
-        });
-    });
-
-    // スクロールしたらヘッダーを表示
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        // スクロールしたらヘッダーを表示
+        if (scrollTop > 100) {
             header.classList.add('visible');
         } else {
             header.classList.remove('visible');
         }
-    });
+    }
+
+    window.addEventListener('scroll', handleScroll, false);
+
+    // 初期状態でヘッダーを非表示に
+    header.classList.remove('visible');
 });
