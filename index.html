@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haru Rina favorite place</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 20px;
+            background-color: #FFD93D;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .social-icon img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) {
+            .social-icon {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .social-icon img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -24,21 +66,21 @@
             <a href="#candies" class="cta-button">お菓子を見る</a>
             
             <div class="social-links">
-                <a href="https://suzuri.jp/haru-rina_art" class="social-icon" aria-label="Goods">
-                  <img src="images/suzuri-icon.png" alt="Goods icon">
-                  <span>商品を見る</span>
+                <a href="https://suzuri.jp/haru-rina_art" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/suzuri-icon.png" alt="Goods icon">
+                    <span>商品を見る</span>
                 </a>
-                <a href="https://www.instagram.com/haru.rina_favorite.place/" class="social-icon" aria-label="Instagram">
-                  <img src="images/instagram-icon.png" alt="Instagram icon">
-                  <span>Instagram</span>
+                <a href="https://www.instagram.com/haru.rina_favorite.place/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/instagram-icon.png" alt="Instagram icon">
+                    <span>Instagram</span>
                 </a>
-                <a href="https://www.tiktok.com/@harurina_name_art" class="social-icon" aria-label="TikTok">
-                  <img src="images/tiktok-icon.png" alt="TikTok icon">
-                  <span>TikTok</span>
+                <a href="https://www.tiktok.com/@harurina_name_art" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/tiktok-icon.png" alt="TikTok icon">
+                    <span>TikTok</span>
                 </a>
-                <a href="https://x.com/Harurina_Art" class="social-icon" aria-label="X">
-                  <img src="images/x-icon.png" alt="X icon">
-                  <span>X（旧Twitter）</span>
+                <a href="https://x.com/Harurina_Art" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/x-icon.png" alt="X icon">
+                    <span>X（旧Twitter）</span>
                 </a>
             </div>
         </div>
@@ -92,5 +134,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach((icon, index) => {
+                icon.style.opacity = '0';
+                icon.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    icon.style.transition = 'all 0.5s ease';
+                    icon.style.opacity = '1';
+                    icon.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 </body>
 </html>
