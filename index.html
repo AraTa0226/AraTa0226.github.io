@@ -12,6 +12,8 @@
             align-items: center;
             gap: 15px;
             margin-top: 30px;
+            position: relative;
+            z-index: 10;
         }
         .social-icon {
             display: flex;
@@ -20,12 +22,15 @@
             width: 100%;
             max-width: 300px;
             padding: 10px 20px;
-            background-color: #FFD93D;
+            background-color: rgba(255, 217, 61, 0.9);
             color: #333;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
         }
         .social-icon img {
             width: 24px;
@@ -35,6 +40,7 @@
         .social-icon:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: rgba(255, 217, 61, 1);
         }
         @media (max-width: 768px) {
             .social-icon {
@@ -146,16 +152,16 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const socialIcons = document.querySelectorAll('.social-icon');
-            socialIcons.forEach((icon, index) => {
-                icon.style.opacity = '0';
-                icon.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    icon.style.transition = 'all 0.5s ease';
-                    icon.style.opacity = '1';
-                    icon.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
+            setTimeout(function() {
+                const socialIcons = document.querySelectorAll('.social-icon');
+                socialIcons.forEach((icon, index) => {
+                    setTimeout(() => {
+                        icon.style.transition = 'all 0.5s ease';
+                        icon.style.opacity = '1';
+                        icon.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            }, 500); // ページ読み込み後、少し遅らせてアニメーションを開始
         });
     </script>
 </body>
