@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const candyContainer = document.getElementById('floatingCandies');
         const candyImages = [
             '/images/ルーシー.png',
-            '/api/placeholder/50/50',
+            '/images/harurina.png',
             '/images/ルーシー.png',
-            '/api/placeholder/50/50'
+            '/images/harurina.png'
         ];
 
         for (let i = 0; i < 20; i++) {
