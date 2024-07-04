@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap');
+
 :root {
     --primary-color: #FF6B6B;
     --secondary-color: #4ECDC4;
     --accent-color: #FFD93D;
     --text-color: #333;
     --bg-color: #FFF9F9;
-    --header-height: 60px; /* ヘッダーの高さを定義 */
+    --header-height: 60px;
 }
 
 body, html {
@@ -22,7 +23,7 @@ body, html {
     padding: 15px 0;
     position: fixed;
     width: 100%;
-    top: -100px; /* Start off-screen */
+    top: -100px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: top 0.3s ease-in-out;
@@ -30,7 +31,7 @@ body, html {
 }
 
 .header.visible {
-    top: 0; /* Slide in when visible */
+    top: 0;
 }
 
 .nav {
@@ -63,7 +64,7 @@ body, html {
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding-top: calc(var(--header-height) + 20px); /* ヘッダーの高さ + 追加のスペース */
+    padding-top: calc(var(--header-height) + 20px);
 }
 
 .hero-content {
@@ -203,43 +204,45 @@ footer {
 }
 
 .hero .social-links {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero .social-icon {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  padding: 15px 30px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  font-weight: 600;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .hero .social-icon:hover {
-  transform: translateY(-3px) rotate(3deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px) rotate(3deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero .social-icon img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 .hero .social-icon span {
-  font-size: 16px;
+    font-size: 16px;
 }
