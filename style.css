@@ -78,10 +78,18 @@ body, html {
     padding: 20px;
 }
 
+.shop-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+
 .shop-illustration {
     width: 100%;
     max-width: 500px;
-    margin-bottom: 30px;
 }
 
 .shop-illustration-image {
@@ -93,9 +101,15 @@ body, html {
 .hero h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 3em;
-    margin-bottom: 20px;
     color: var(--accent-color);
     text-shadow: 3px 3px 0px var(--primary-color);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 50%;
+    text-align: left;
+    z-index: 2;
 }
 
 .hero p {
@@ -269,12 +283,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .shop-header {
+        flex-direction: column;
+    }
+
     .shop-illustration {
         max-width: 300px;
     }
 
     .hero h1 {
+        position: static;
         font-size: 2em;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        transform: none;
     }
 
     .hero p {
