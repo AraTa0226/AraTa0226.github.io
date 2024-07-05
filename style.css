@@ -4,8 +4,8 @@
     --primary-color: #FF1493;    /* ビビッドなピンク */
     --secondary-color: #8A2BE2;  /* ブルーバイオレット（紫） */
     --accent-color: #00BFFF;     /* ディープスカイブルー */
-    --text-color: #FFFFFF;       /* 白 */
-    --bg-color: #1E1E1E;         /* ダークグレー（背景） */
+    --text-color: #333333;       /* ダークグレー（テキスト） */
+    --bg-color: #FFFFFF;         /* 白（背景） */
     --header-height: 60px;       /* ヘッダーの高さを定義 */
 }
 
@@ -42,7 +42,7 @@ body, html {
 }
 
 .nav a {
-    color: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1em;
@@ -50,7 +50,7 @@ body, html {
 }
 
 .nav a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transform: scale(1.1);
 }
 
@@ -59,8 +59,8 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    background: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -100,14 +100,15 @@ body, html {
 
 .hero h1 {
     font-family: 'Fredoka One', cursive;
-    font-size: 3em;
-    color: var(--accent-color);
-    text-shadow: 3px 3px 0px var(--primary-color);
+    font-size: 4em;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 50%;
+    max-width: 60%;
     text-align: left;
     z-index: 2;
 }
@@ -115,12 +116,13 @@ body, html {
 .hero p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    color: var(--text-color);
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     text-decoration: none;
     border-radius: 50px;
@@ -132,7 +134,7 @@ body, html {
 .cta-button:hover {
     transform: translateY(-3px) rotate(3deg);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .section {
@@ -181,7 +183,7 @@ body, html {
 .candy-item h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .candy-item p {
@@ -197,18 +199,18 @@ body, html {
 }
 
 #contact {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
     text-align: center;
 }
 
 #contact h2 {
-    color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--bg-color);
     text-align: center;
     padding: 20px 0;
     font-size: 0.9em;
@@ -269,7 +271,7 @@ footer {
 .hero .social-icon:hover {
     transform: translateY(-3px) rotate(3deg);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .hero .social-icon img {
@@ -296,7 +298,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 1.8em;
+        font-size: 2.5em;
         max-width: 60%;
         left: 10px;
         margin-top: 0;
@@ -339,7 +341,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 1.5em;
+        font-size: 2em;
         max-width: 50%;
         left: 5px;
     }
