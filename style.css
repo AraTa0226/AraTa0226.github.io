@@ -136,8 +136,8 @@ body, html {
 }
 
 .candy-item img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 800px;
     margin-bottom: 15px;
     border-radius: 0%;
     object-fit: cover;
