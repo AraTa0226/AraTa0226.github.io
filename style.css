@@ -136,11 +136,12 @@ body, html {
 }
 
 .candy-item img {
-    width: 200px;
-    height: 800px;
-    margin-bottom: 15px;
-    border-radius: 0%;
-    object-fit: cover;
+  width: 200px;
+  height: 800px;
+  margin-bottom: 15px;
+  border-radius: 0;  /* 四角形にする場合 */
+  object-fit: cover;
+  object-position: center;  /* 画像の中央部分を表示 */
 }
 
 .candy-item h3 {
