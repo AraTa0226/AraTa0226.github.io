@@ -99,18 +99,20 @@ body, html {
 }
 
 .hero h1 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 4em;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 60%;
-    text-align: left;
-    z-index: 2;
+  font-family: 'Fredoka One', cursive;
+  font-size: 4em;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--primary-color); /* フォールバック色 */
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 60%;
+  text-align: left;
+  z-index: 2;
 }
 
 .hero p {
