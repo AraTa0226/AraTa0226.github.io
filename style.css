@@ -136,10 +136,10 @@ body, html {
 }
 
 .candy-item img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 15px;
-    border-radius: 50%;
+    border-radius: 10%;
     object-fit: cover;
 }
 
