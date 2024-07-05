@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function createFloatingCandies() {
         const candyContainer = document.getElementById('floatingCandies');
         const candyImages = [
-            '/images/ルーシー.png',
-            '/images/ルーシー.png',
-            '/images/ルーシー.png',
-            '/images/ルーシー.png'
+            '/images/アイス1.png',
+            '/images/アイス2.png',
+            '/images/アイス3.png',
+            '/images/アイス4.png'
         ];
 
         for (let i = 0; i < 20; i++) {
