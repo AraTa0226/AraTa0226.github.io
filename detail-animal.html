@@ -38,6 +38,19 @@
             margin-top: 40px;
             margin-bottom: 20px;
         }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .price-table th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -62,11 +75,31 @@
         <p class="annotation">
             <span class="annotation-mark">※</span>満足度料金とは、ご希望に添えたかどうかでお客様の任意でお支払いいただく料金です。より良い作品作りの励みとなります。
         </p>
+        <h3>基本料金</h3>
         <ul>
-            <li>シンプルな人物イラスト: ¥500</li>
-            <li>背景付きイラスト: ¥1,000</li>
-            <li>複数人物イラスト: お問い合わせください</li>
+            <li>シンプルなイラスト: 1アイテムあたり500円</li>
+            <li>背景付きイラスト: 1アイテムあたり1,000円</li>
+            <li>複数アイテムのイラスト: お問い合わせください</li>
         </ul>
+        <h3>オプション料金</h3>
+        <table class="price-table">
+            <tr>
+                <th>オプション</th>
+                <th>追加料金</th>
+            </tr>
+            <tr>
+                <td>ネームアートに変更（2名様まで）</td>
+                <td>+100円</td>
+            </tr>
+            <tr>
+                <td>装飾品の追加</td>
+                <td>1アイテムあたり +100円</td>
+            </tr>
+            <tr>
+                <td>お洋服の追加</td>
+                <td>お1人様あたり +300円</td>
+            </tr>
+        </table>
         <h2>制作期間</h2>
         <p>通常2〜3週間程度でお届けします。急ぎの場合はご相談ください。</p>
         <a href="index.html#contact" class="cta-button">お問い合わせ</a>
