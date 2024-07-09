@@ -337,33 +337,56 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     .shop-header {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        overflow: hidden;
+        justify-content: center;
+        padding: 0 10px;
     }
 
     .shop-illustration {
-        max-width: 70%;
-        margin-left: auto;
+        max-width: 100%;
+        margin: 0 auto 20px;
     }
 
     .hero h1 {
-        font-size: 3.5em;
-        max-width: 60%;
-        left: 10px;
-        margin-top: 0;
+        font-size: 2.5em;
+        max-width: 100%;
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-content {
+        padding: 20px 10px;
     }
 
     .hero p {
         font-size: 0.9em;
+        margin-bottom: 20px;
     }
 
     .cta-button {
-        padding: 8px 16px;
-        font-size: 0.8em;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .hero .social-links {
+        width: 90%;
+        max-width: none;
+    }
+
+    .hero .social-icon {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .hero .social-icon img {
+        width: 20px;
+        height: 20px;
     }
 
     .section h2 {
@@ -386,26 +409,39 @@ footer {
     .price {
         font-size: 1.1em;
     }
-
-    .hero .social-icon {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .hero .social-icon img {
-        width: 20px;
-        height: 20px;
-    }
 }
 
 @media (max-width: 480px) {
-    .shop-illustration {
-        max-width: 80%;
+    .hero h1 {
+        font-size: 2em;
     }
 
+    .hero .social-icon {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* Ensure text doesn't overflow */
+.hero h1, .hero p, .hero .social-icon span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Additional improvements for smaller screens */
+@media (max-width: 360px) {
     .hero h1 {
-        font-size: 3em;
-        max-width: 50%;
-        left: 5px;
+        font-size: 1.8em;
+    }
+
+    .hero .social-icon {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .hero .social-icon img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
     }
 }
