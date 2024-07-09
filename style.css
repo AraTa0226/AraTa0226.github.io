@@ -373,6 +373,7 @@ footer {
     .candy-item img {
         width: 100%;
         height: auto;
+        object-fit: cover;
     }
 
     .candy-item h3 {
