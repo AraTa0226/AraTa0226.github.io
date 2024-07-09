@@ -80,6 +80,7 @@ body, html {
 
 .shop-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
@@ -90,6 +91,7 @@ body, html {
 .shop-illustration {
     width: 100%;
     max-width: 500px;
+    margin-bottom: 20px;
 }
 
 .shop-illustration-image {
@@ -100,19 +102,18 @@ body, html {
 
 .hero h1 {
     font-family: 'Fredoka One', cursive;
-    font-size: 4em;
+    font-size: 2.5em;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--primary-color); /* フォールバック色 */
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 60%;
-    text-align: left;
-    z-index: 2;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .hero p {
@@ -339,29 +340,13 @@ footer {
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-    .shop-header {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 10px;
-    }
-
-    .shop-illustration {
-        max-width: 100%;
-        margin: 0 auto 20px;
+    .hero-content {
+        padding: 20px 10px;
     }
 
     .hero h1 {
-        font-size: 2.5em;
-        max-width: 100%;
-        position: static;
-        transform: none;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .hero-content {
-        padding: 20px 10px;
+        font-size: 2em;
+        padding: 0 5px;
     }
 
     .hero p {
@@ -413,7 +398,7 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .hero .social-icon {
@@ -422,16 +407,10 @@ footer {
     }
 }
 
-/* Ensure text doesn't overflow */
-.hero h1, .hero p, .hero .social-icon span {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
 /* Additional improvements for smaller screens */
 @media (max-width: 360px) {
     .hero h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .hero .social-icon {
