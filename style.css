@@ -81,8 +81,8 @@ body, html {
 .shop-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-bottom: 30px;
     position: relative;
     width: 100%;
@@ -92,6 +92,7 @@ body, html {
     width: 100%;
     max-width: 500px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .shop-illustration-image {
@@ -108,12 +109,17 @@ body, html {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--primary-color); /* フォールバック色 */
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     padding: 0 10px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
 .hero p {
